@@ -38,11 +38,10 @@ export default class GoogleProvider extends AbstractProvider<
   RawResult
 > {
   //   searchUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
-  searchUrl =
-    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json';
+  searchUrl = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
 
   endpoint({ query }: any) {
-    const params = { input: query, inputtype: 'textquery' };
+    const params = { input: query, components: 'country:us' };
     return this.getUrl(this.searchUrl, params);
   }
 
