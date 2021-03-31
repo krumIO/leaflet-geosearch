@@ -37,8 +37,9 @@ export default class GoogleProvider extends AbstractProvider<
   RequestResult,
   RawResult
 > {
-//   searchUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
-  searchUrl = 'https://maps.googleapis.com/maps/api/js'
+  //   searchUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
+  searchUrl =
+    'https://maps.googleapis.com/maps/api/place/findplacefromtext/json';
 
   endpoint({ query }: EndpointArgument) {
     const params = typeof query === 'string' ? { address: query } : query;
