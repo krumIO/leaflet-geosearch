@@ -41,8 +41,8 @@ export default class GoogleProvider extends AbstractProvider<
   searchUrl =
     'https://maps.googleapis.com/maps/api/place/findplacefromtext/json';
 
-  endpoint({ query }: EndpointArgument) {
-    const params = typeof query === 'string' ? { address: query } : query;
+  endpoint({ query }: any) {
+    const params = { input: query, inputtype: 'textquery' };
     return this.getUrl(this.searchUrl, params);
   }
 

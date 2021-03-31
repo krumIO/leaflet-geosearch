@@ -1,4 +1,4 @@
-import AbstractProvider, { EndpointArgument, LatLng, ParseArgument, SearchResult } from './provider';
+import AbstractProvider, { LatLng, ParseArgument, SearchResult } from './provider';
 export interface RequestResult {
     results: RawResult[];
     status: string;
@@ -27,6 +27,6 @@ export interface RawResult {
 }
 export default class GoogleProvider extends AbstractProvider<RequestResult, RawResult> {
     searchUrl: string;
-    endpoint({ query }: EndpointArgument): string;
+    endpoint({ query }: any): string;
     parse(result: ParseArgument<RequestResult>): SearchResult<RawResult>[];
 }
